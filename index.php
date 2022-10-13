@@ -58,3 +58,34 @@
         }
     ?>
 </div>
+
+<div style="background-color: #ddd; padding: 20px 40px; border: 1px solid black; margin: 20px">
+    <h2>Snack 2</h2>
+    <?php
+    /*
+    Snack 2
+    Passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione)
+    che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero.
+    Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
+    */
+
+    if(isset( $_GET['name'], $_GET['mail'], $_GET['age'] )){
+        $name = $_GET['name'];
+        $mail = $_GET['mail'];
+        $age = $_GET['age'];
+
+        if(strlen($name) > 3 && strpos($mail, '.') && strpos($mail, '@') && is_numeric($age)){
+            ?>
+                <p style="color: green">Accesso riuscito</p>
+            <?php
+        } else {
+            ?>
+                <p style="color: red">Accesso negato</p>
+            <?php
+        }
+
+    } else {
+        echo 'Nessun valore passato tramite GET';
+    };
+    ?>
+</div>
