@@ -170,3 +170,37 @@
     ?>
 </div>
 
+<div style="background-color: #ddd; padding: 20px 40px; border: 1px solid black; margin: 20px">
+    <h2>Snack 4</h2>
+    <?php
+    /*
+    Snack 4
+    Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il paragrafo e suddividerlo
+    in tanti paragrafi. Ogni punto un nuovo paragrafo.
+    */
+
+    $text = 'Così sbilenco, con una spalla più alta dell’altra, andava per via di traverso, come i cani. Nessuno però,
+    moralmente, sapeva rigar più diritto di lui. Lo dicevano tutti.
+    Vedere, non aveva potuto vedere molte cose, il giudice D’Andrea; ma certo moltissime ne aveva pensate, e
+    quando il pensare è più triste, cioè di notte.
+    Il giudice D’Andrea non poteva dormire.
+    Passava quasi tutte le notti alla finestra a spazzolarsi una mano a quei duri gremiti suoi capelli da negro, con
+    gli occhi alle stelle, placide e chiare le une come polle di luce, guizzanti e pungenti le altre; e metteva le più
+    vive in rapporti ideali di figure geometriche, di triangoli e di quadrati, e, socchiudendo le palpebre dietro le
+    lenti, pigliava tra i peli delle ciglia la luce d’una di quelle stelle, e tra l’occhio e la stella stabiliva il legame d’un
+    sottilissimo filo luminoso, e vi avviava l’anima a passeggiare come un ragnetto smarrito.
+    Il pensare così di notte non conferisce molto alla salute. L’arcana solennità che acquistano i pensieri
+    produce quasi sempre, specie a certuni che hanno in sè una certezza su la quale non possono riposare, la
+    certezza di non poter nulla sapere e nulla credere non sapendo, qualche seria costipazione. Costipazione
+    d’anima, s’intende.';
+
+    ?>
+
+    <p>
+       <?=
+            str_replace('.', '</p><p>', $text);
+        ?> 
+    </p>
+
+    
+</div>
