@@ -201,6 +201,78 @@
             str_replace('.', '</p><p>', $text);
         ?> 
     </p>
+</div>
 
-    
+<div style="background-color: #ddd; padding: 20px 40px; border: 1px solid black; margin: 20px">
+    <h2>Snack 5</h2>
+    <?php
+    /*
+    Snack 5
+    Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno avrà Nome,
+    Cognome e un array contenente i suoi voti scolastici. Stampare Nome, Cognome e la media dei voti di ogni alunno.
+    */
+
+    $students = [
+            [
+                'name' => 'Mario',
+                'surname' => 'Longo',
+                'votes' => [7, 6, 4, 8, 2, 3, 4, 7, 8, 4],
+            ],
+            [
+                'name' => 'Chiara',
+                'surname' => 'Antilio',
+                'votes' => [2, 3, 6, 4, 7, 8, 2, 3, 6, 9],
+            ],
+            [
+                'name' => 'Luana',
+                'surname' => 'Zattoni',
+                'votes' => [4, 3, 2, 4, 2, 3, 5, 2, 3, 6],
+            ],
+            [
+                'name' => 'Filippo',
+                'surname' => 'Colombo',
+                'votes' => [3, 2, 5, 3, 2, 5, 2, 5, 2, 3],
+            ],
+            [
+                'name' => 'Claudio',
+                'surname' => 'Bianchi',
+                'votes' => [5, 4, 3, 6, 4, 5, 7, 8, 7, 5],
+            ],
+            [
+                'name' => 'Giovanni',
+                'surname' => 'Verdi',
+                'votes' => [4, 3, 5, 3, 5, 7, 6, 5, 8, 7],
+            ],
+            [
+                'name' => 'Anna',
+                'surname' => 'Rossi',
+                'votes' => [4, 3, 6, 5, 7, 8, 7, 5, 7, 9],
+            ]
+        ];
+
+        for($i = 0; $i < count($students); $i++){
+            ?>
+                <div style="padding: 10px; border: 1px solid black; margin: 10px">
+                    <p><span style="font-weight: 600;">Name: </span><span><?= $students[$i]['name'] ?></span></p>
+                    <p><span style="font-weight: 600;">Surname: </span><span><?= $students[$i]['surname'] ?></span></p>
+                    <p><span style="font-weight: 600;">Grade average: </span>
+                        <span>
+                            <?php 
+
+                                $sum = 0;
+                                $average = 0;
+
+                                for($j = 0; $j < count($students[$i]['votes']); $j++){
+                                    $sum += $students[$i]['votes'][$j];
+                                }
+
+                                $average = $sum / count($students[$i]['votes']);
+
+                                echo $average;
+                            ?>
+                    </span></p>
+                </div>
+            <?php
+        }
+    ?>
 </div>
